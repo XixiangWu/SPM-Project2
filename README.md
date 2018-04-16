@@ -4,16 +4,26 @@ Software Project and Process Management | Assignment 2
 ## Demo
 www.wuxixiang.com/login.html
 
-## Foundamental Functions - ToDoList
+## Key Functions - ToDoList
 - [x] Build MySQL Database
 - [x] Setup website
-- [x] Login Interface
-- [ ] Personal User Data Modification (back-end)
+- [x] Login Logout
+  - [x] Interface
+  - [x] Database
+- [x] User Pesonal Data
+  - [x] Interface
+  - [x] Database
+- [ ] Load dogs owned by User (back-end)
+  - [ ] Interface
+  - [x] Database
+- [ ] User Information Modification (back-end)
+  - [x] Interface
+  - [ ] Database 
 - [x] Enable 'Session' through the whole Website
 - [x] Index Interface
-- [x] Navigator Bar
-- [x] Profile Modification Interface
+- [x] Navigation Bar
 - [ ] Personal Appointment Interface
+  - [ ] 
 - [ ] Appointment Selection Interface
 - [ ] Automatic Reminder
 - [ ] Groomer Interface
