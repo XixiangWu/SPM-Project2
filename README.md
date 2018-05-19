@@ -10,6 +10,9 @@ www.wuxixiang.com/login.html
 - [x] Login Logout
   - [x] Interface
   - [x] Database
+- [x] Register
+  - [x] Interface
+  - [x] Database
 - [x] User Pesonal Data
   - [x] Interface
   - [x] Database
