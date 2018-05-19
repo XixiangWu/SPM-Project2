@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="https://getbootstrap.com/favicon.ico">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>Register Page</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./assets/css/signin.css" rel="stylesheet">
+    <style></style>
+    <style>
+        html,
+        * {
+            -webkit-user-select: text!important;
+            -moz-user-select: text!important;
+        }
+    </style>
+</head>
+
+
+<body class="text-center">
+    <form id="regform" method="post" class="form-signin">
+        <img class="mb-4" src="./assets/images/bootstrap-solid.svg" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Please Sign up</h1>
+        <label for="inputUsername" class="sr-only">Email</label>
+        <input type="email" id="email" class="form-control" placeholder="Enter your email" required="" autofocus="">
+        <label for="inputUsername" class="sr-only">Username</label>
+        <input type="username" id="username" class="form-control" placeholder="Enter your username" required="" autofocus="">
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="password" class="form-control" placeholder="Enter your password" required="">
+        <label for="inputPassword" class="sr-only">Password Again</label>
+        <input type="password" id="password-2" class="form-control" placeholder="Enter your password again" required="">
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" name="btn-login">Sign in</button>
+        <p class="mt-5 mb-3 text-muted">Software Project and Process Management | Assignment 2</p>
+    </form>
+
+
+    <script>
+        $(document).ready(function () {
+            $('#regform').submit(function (e) {
+                if ($("#password").val() != $("#password-2").val()) {
+                    alert("The password is not the same.");
+                    return;
+                }
+                
+                e.preventDefault();
+                $.ajax({
+                    type: "POST"
+                    , url: 'register.php'
+                    , data: {
+                        username: $("#username").val()
+                        , password: $("#password").val()
+                        , email: $("#email").val()
+                    }
+                    , success: function (res) {
+                        if (res.includes('Registered')) {
+                            window.location = 'login.html';
+                        } else {
+                            alert('The username:' + $("#username").val() + ' has been occupied] | ' + res);
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
